@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mokhetle Attorneys Inc | Law Firm — Mahikeng</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0f1a2e;
+      --navy-2: #16243d;
+      --navy-3: #1e2f4d;
+      --ink: #0a1220;
+      --ink-soft: #4a5568;
+      --ink-muted: #8a95a5;
+      --bg: #f8f6f1;
+      --card: #ffffff;
+      --card-cream: #fbf9f4;
+      --border: #e4dfd2;
+      --border-strong: #cfc7b3;
+      --gold: #c9a961;
+      --gold-dim: #a88940;
+      --gold-soft: #f5efe0;
+      --white: #ffffff;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Inter', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--serif);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    /* ===== NAV ===== */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(15, 26, 46, 0.96);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(201, 169, 97, 0.2);
+    }
+    nav .inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .logo-mark {
+      width: 46px;
+      height: 46px;
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+      letter-spacing: -0.05em;
+    }
+    .logo-text {
+      line-height: 1.1;
+    }
+    .logo-text strong {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--white);
+      display: block;
+      letter-spacing: 0.02em;
+    }
+    .logo-text small {
+      font-size: 0.6rem;
+      color: var(--gold);
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+    .nav-links a {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.75);
+      transition: color 0.2s;
+      letter-spacing: 0.03em;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta {
+      background: var(--gold);
+      color: var(--navy) !important;
+      padding: 11px 22px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.78rem;
+      transition: all 0.2s;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .nav-cta:hover {
+      background: var(--gold-dim);
+      color: var(--white) !important;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--gold);
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      padding: 170px 24px 100px;
+      background:
+        linear-gradient(135deg, rgba(15, 26, 46, 0.92), rgba(22, 36, 61, 0.96)),
+        linear-gradient(135deg, #0f1a2e, #1e2f4d);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 15% 25%, rgba(201, 169, 97, 0.12), transparent 45%),
+        radial-gradient(circle at 85% 75%, rgba(201, 169, 97, 0.08), transparent 45%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .hero-grid {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.7rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 28px;
+    }
+    .hero-tag::before {
+      content: "";
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .hero h1 {
+      font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+      margin-bottom: 28px;
+      line-height: 1.08;
+      color: var(--white);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+      font-weight: 400;
+    }
+    .hero-sub {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.78);
+      max-width: 560px;
+      margin-bottom: 40px;
+      line-height: 1.75;
+      font-weight: 300;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 15px 30px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      transition: all 0.25s;
+      cursor: pointer;
+      border: none;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy);
+      border-radius: 4px;
+    }
+    .btn-primary:hover {
+      background: var(--gold-dim);
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(201, 169, 97, 0.35);
+    }
+    .btn-outline-light {
+      background: transparent;
+      color: var(--white);
+      border: 1.5px solid rgba(255,255,255,0.35);
+      border-radius: 4px;
+    }
+    .btn-outline-light:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+    .hero-trust {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255,255,255,0.15);
+    }
+    .hero-trust-item {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 0.02em;
+    }
+    .hero-trust-item strong {
+      display: block;
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 4px;
+      letter-spacing: 0;
+    }
+    .hero-stars {
+      color: var(--gold);
+      letter-spacing: 3px;
+      font-size: 0.85rem;
+    }
+
+    /* Hero visual — practice seal */
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    .seal {
+      width: 340px;
+      height: 340px;
+      border-radius: 50%;
+      border: 1px solid rgba(201, 169, 97, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .seal::before {
+      content: "";
+      position: absolute;
+      inset: 20px;
+      border-radius: 50%;
+      border: 1px solid rgba(201, 169, 97, 0.25);
+    }
+    .seal::after {
+      content: "";
+      position: absolute;
+      inset: 40px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 35% 30%, rgba(201, 169, 97, 0.15), transparent 60%);
+      border: 1px solid rgba(201, 169, 97, 0.15);
+    }
+    .seal-inner {
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+    .seal-icon {
+      font-size: 3.5rem;
+      margin-bottom: 16px;
+      filter: brightness(1.2) sepia(0.8);
+    }
+    .seal-inner h4 {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      color: var(--gold);
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      line-height: 1.5;
+    }
+    .seal-inner p {
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.55);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-top: 10px;
+    }
+
+    /* ===== INFO STRIP ===== */
+    .info-strip {
+      background: var(--card);
+      padding: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    .info-strip-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .info-strip-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.88rem;
+      color: var(--ink-soft);
+    }
+    .info-strip-item strong { color: var(--ink); font-weight: 700; }
+    .info-strip-icon { color: var(--gold-dim); font-size: 1.05rem; }
+
+    /* ===== SECTIONS ===== */
+    section { padding: 110px 24px; }
+    .container { max-width: 1280px; margin: 0 auto; }
+
+    .section-head {
+      max-width: 720px;
+      margin-bottom: 72px;
+    }
+    .section-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      margin-bottom: 18px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-label::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: var(--gold-dim);
+    }
+    .section-title {
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      margin-bottom: 22px;
+      color: var(--navy);
+      font-weight: 500;
+    }
+    .section-title em {
+      font-style: italic;
+      color: var(--gold-dim);
+      font-weight: 400;
+    }
+    .section-intro {
+      color: var(--ink-soft);
+      font-size: 1.02rem;
+      line-height: 1.8;
+      max-width: 640px;
+    }
+
+    /* ===== ABOUT ===== */
+    #about { background: var(--card-cream); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .about-visual {
+      aspect-ratio: 4 / 5;
+      border-radius: 4px;
+      background:
+        linear-gradient(165deg, var(--navy) 0%, var(--navy-3) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 24px 24px 0 var(--gold-soft);
+    }
+    .about-visual::before {
+      content: "";
+      position: absolute;
+      inset: 24px;
+      border: 1px solid rgba(201, 169, 97, 0.25);
+      border-radius: 2px;
+    }
+    .about-visual::after {
+      content: "⚖️";
+      font-size: 7rem;
+      opacity: 0.85;
+      filter: sepia(0.5) brightness(1.3);
+    }
+    .about-text p {
+      color: var(--ink-soft);
+      margin-bottom: 20px;
+      font-size: 1rem;
+      line-height: 1.85;
+    }
+    .about-text p.lead {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-style: italic;
+      color: var(--navy);
+      line-height: 1.55;
+      font-weight: 500;
+      margin-bottom: 28px;
+    }
+    .about-points {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 36px;
+      padding-top: 36px;
+      border-top: 1px solid var(--border);
+    }
+    .about-point {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .about-point-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--gold-soft);
+      color: var(--gold-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+      font-weight: 700;
+      font-family: var(--serif);
+    }
+    .about-point-text strong {
+      display: block;
+      font-family: var(--serif);
+      font-size: 1rem;
+      color: var(--navy);
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+    .about-point-text span {
+      font-size: 0.82rem;
+      color: var(--ink-muted);
+      line-height: 1.5;
+    }
+
+    /* ===== PRACTICE AREAS ===== */
+    #practice { background: var(--bg); }
+    .practice-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 24px;
+    }
+    .practice-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 36px 32px;
+      transition: all 0.3s;
+      position: relative;
+    }
+    .practice-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--gold);
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: transform 0.35s;
+    }
+    .practice-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(15, 26, 46, 0.08);
+      border-color: var(--border-strong);
+    }
+    .practice-card:hover::before { transform: scaleY(1); }
+    .practice-num {
+      font-family: var(--serif);
+      font-size: 0.85rem;
+      color: var(--gold-dim);
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .practice-card h3 {
+      font-size: 1.35rem;
+      color: var(--navy);
+      margin-bottom: 14px;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+    .practice-card p {
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+      line-height: 1.65;
+      margin-bottom: 18px;
+    }
+    .practice-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+    }
+    .practice-tag {
+      font-size: 0.72rem;
+      color: var(--ink-muted);
+      background: var(--bg);
+      padding: 4px 10px;
+      border-radius: 3px;
+      letter-spacing: 0.02em;
+    }
+
+    /* ===== ADDITIONAL SERVICES ===== */
+    .additional-services {
+      margin-top: 48px;
+      background: var(--navy);
+      border-radius: 8px;
+      padding: 44px 48px;
+      color: var(--white);
+    }
+    .additional-services h3 {
+      font-size: 1.35rem;
+      color: var(--gold);
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+    .additional-services p {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.95rem;
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+    .additional-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .additional-list span {
+      font-size: 0.8rem;
+      padding: 6px 14px;
+      background: rgba(201, 169, 97, 0.12);
+      border: 1px solid rgba(201, 169, 97, 0.25);
+      border-radius: 40px;
+      color: rgba(255,255,255,0.9);
+      letter-spacing: 0.02em;
+    }
+
+    /* ===== REVIEWS ===== */
+    #reviews { background: var(--card-cream); }
+    .reviews-hero {
+      background: var(--navy);
+      border-radius: 8px;
+      padding: 64px 60px;
+      color: var(--white);
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .reviews-hero::before {
+      content: "";
+      position: absolute;
+      top: -50%; right: -10%;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(201, 169, 97, 0.15), transparent 70%);
+      pointer-events: none;
+    }
+    .reviews-score {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding-right: 60px;
+      border-right: 1px solid rgba(255,255,255,0.15);
+    }
+    .reviews-score-num {
+      font-family: var(--serif);
+      font-size: 5.5rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+    .reviews-score-stars {
+      color: var(--gold);
+      font-size: 1.2rem;
+      letter-spacing: 4px;
+      display: block;
+      margin-top: 12px;
+    }
+    .reviews-score-label {
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.55);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-top: 14px;
+      display: block;
+    }
+    .reviews-summary {
+      position: relative;
+      z-index: 2;
+    }
+    .reviews-summary .quote-mark {
+      font-family: var(--serif);
+      font-size: 5rem;
+      color: var(--gold);
+      line-height: 0.4;
+      display: block;
+      margin-bottom: 20px;
+      opacity: 0.5;
+    }
+    .reviews-summary p {
+      font-family: var(--serif);
+      font-size: 1.7rem;
+      font-style: italic;
+      line-height: 1.45;
+      color: var(--white);
+      font-weight: 400;
+      margin-bottom: 24px;
+    }
+    .reviews-summary-author {
+      font-size: 0.75rem;
+      color: var(--gold);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    /* ===== VISIT ===== */
+    #visit { background: var(--bg); }
+    .visit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .visit-block { margin-bottom: 40px; }
+    .visit-block h4 {
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: 0.72rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .visit-block h4 span { color: var(--gold-dim); font-size: 1rem; }
+    .visit-block p, .visit-block a {
+      color: var(--navy);
+      font-size: 1.15rem;
+      line-height: 1.55;
+      font-family: var(--serif);
+      font-weight: 500;
+    }
+    .visit-block a:hover { color: var(--gold-dim); }
+    .visit-block .small {
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      color: var(--ink-muted);
+      font-weight: 400;
+      margin-top: 8px;
+      display: block;
+      line-height: 1.6;
+    }
+    .visit-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+    .btn-dark {
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 4px;
+    }
+    .btn-dark:hover {
+      background: var(--navy-3);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(15, 26, 46, 0.25);
+    }
+    .btn-outline-navy {
+      background: transparent;
+      color: var(--navy);
+      border: 1.5px solid var(--border-strong);
+      border-radius: 4px;
+    }
+    .btn-outline-navy:hover {
+      border-color: var(--navy);
+      background: var(--card);
+    }
+    .map-embed {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--card);
+    }
+    .map-embed iframe { width: 100%; height: 100%; border: 0; }
+
+    /* ===== CTA FINAL ===== */
+    .cta-final {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-3) 100%);
+      color: var(--white);
+      padding: 110px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-final::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .cta-final::after {
+      content: "";
+      position: absolute;
+      top: -50%; left: 50%;
+      transform: translateX(-50%);
+      width: 900px; height: 900px;
+      background: radial-gradient(circle, rgba(201, 169, 97, 0.1), transparent 60%);
+      pointer-events: none;
+    }
+    .cta-final-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 820px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .cta-final .section-label {
+      color: var(--gold);
+      justify-content: center;
+      display: flex;
+      margin-bottom: 24px;
+    }
+    .cta-final .section-label::before { background: var(--gold); }
+    .cta-final h2 {
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      margin-bottom: 24px;
+      color: var(--white);
+      font-weight: 500;
+      line-height: 1.15;
+    }
+    .cta-final h2 em {
+      font-style: italic;
+      color: var(--gold);
+      font-weight: 400;
+    }
+    .cta-final p {
+      color: rgba(255,255,255,0.78);
+      margin-bottom: 40px;
+      font-size: 1.05rem;
+      line-height: 1.75;
+      font-weight: 300;
+    }
+    .cta-final-actions {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--ink);
+      color: rgba(255,255,255,0.6);
+      padding: 70px 24px 30px;
+    }
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 50px;
+    }
+    .footer-brand .logo-text strong {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+    }
+    .footer-brand p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.75;
+      margin-top: 18px;
+      max-width: 320px;
+    }
+    .footer-col h5 {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+    .footer-col ul {
+      list-style: none;
+    }
+    .footer-col li {
+      margin-bottom: 12px;
+    }
+    .footer-col a {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.6);
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: var(--gold); }
+    .footer-bottom {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      text-align: center;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.35);
+      line-height: 1.8;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 90;
+      background: var(--gold);
+      color: var(--navy);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      box-shadow: 0 8px 28px rgba(201, 169, 97, 0.45);
+      transition: transform 0.2s;
+      font-weight: 700;
+    }
+    .whatsapp-float:hover { transform: scale(1.08); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 50px; }
+      .hero { padding: 130px 20px 60px; }
+      .seal { width: 260px; height: 260px; }
+      .seal-icon { font-size: 2.5rem; }
+
+      .about-grid { grid-template-columns: 1fr; gap: 50px; }
+      .about-visual { aspect-ratio: 1; box-shadow: 14px 14px 0 var(--gold-soft); }
+      .about-points { grid-template-columns: 1fr; }
+
+      .visit-grid { grid-template-columns: 1fr; gap: 50px; }
+
+      .reviews-hero {
+        grid-template-columns: 1fr;
+        gap: 36px;
+        padding: 44px 32px;
+      }
+      .reviews-score {
+        padding-right: 0;
+        padding-bottom: 36px;
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.15);
+      }
+      .reviews-score-num { font-size: 4.5rem; }
+      .reviews-summary p { font-size: 1.3rem; }
+
+      .additional-services { padding: 36px 28px; }
+
+      .footer-inner { grid-template-columns: 1fr; gap: 40px; }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        flex-direction: column;
+        background: var(--navy-2);
+        padding: 24px;
+        gap: 20px;
+        border-bottom: 1px solid rgba(201, 169, 97, 0.2);
+        align-items: flex-start;
+      }
+      .nav-links.open { display: flex; }
+      .menu-toggle { display: block; }
+
+      section { padding: 70px 20px; }
+      .hero-trust { gap: 24px; }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 2.1rem; }
+      .section-title { font-size: 1.7rem; }
+      .seal { width: 220px; height: 220px; }
+      .seal-icon { font-size: 2rem; }
+      .reviews-score-num { font-size: 3.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav>
+    <div class="inner">
+      <a href="#top" class="nav-logo">
+        <div class="logo-mark">M</div>
+        <div class="logo-text">
+          <strong>Mokhetle Attorneys</strong>
+          <small>Incorporated • Mahikeng</small>
+        </div>
+      </a>
+      <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+      <div class="nav-links">
+        <a href="#about" onclick="document.querySelector('.nav-links').classList.remove('open')">About</a>
+        <a href="#practice" onclick="document.querySelector('.nav-links').classList.remove('open')">Practice Areas</a>
+        <a href="#reviews" onclick="document.querySelector('.nav-links').classList.remove('open')">Reviews</a>
+        <a href="#visit" onclick="document.querySelector('.nav-links').classList.remove('open')">Contact</a>
+        <a href="tel:0183812910" class="nav-cta">Consultation</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="top">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-tag">Established Practice • Mahikeng</div>
+        <h1>
+          Legal counsel you can <em>trust</em>. <br>
+          Representation you can <em>rely on</em>.
+        </h1>
+        <p class="hero-sub">
+          Mokhetle Attorneys Inc is a full-service law firm based in Mahikeng, offering expert legal advice and representation across litigation, commercial, property, and personal matters — with the warmth and care every client deserves.
+        </p>
+        <div class="hero-actions">
+          <a href="tel:0183812910" class="btn btn-primary">📞 Book a Consultation</a>
+          <a href="#practice" class="btn btn-outline-light">Our Practice Areas</a>
+        </div>
+        <div class="hero-trust">
+          <div class="hero-trust-item">
+            <span class="hero-stars">★★★★☆</span>
+            <strong>4.4 / 5</strong>
+            9 Google reviews
+          </div>
+          <div class="hero-trust-item">
+            <strong>24 Hrs</strong>
+            Available for urgent matters
+          </div>
+          <div class="hero-trust-item">
+            <strong>Full-Service</strong>
+            Litigation to advisory
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="seal">
+          <div class="seal-inner">
+            <div class="seal-icon">⚖️</div>
+            <h4>Mokhetle<br>Attorneys Inc</h4>
+            <p>Est. Mahikeng</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== INFO STRIP ===== -->
+  <div class="info-strip">
+    <div class="info-strip-inner">
+      <div class="info-strip-item">
+        <span class="info-strip-icon">📍</span>
+        <span><strong>18 Havenga St</strong>, Golf View, Mahikeng</span>
+      </div>
+      <div class="info-strip-item">
+        <span class="info-strip-icon">📞</span>
+        <span><strong>018 381 2910</strong></span>
+      </div>
+      <div class="info-strip-item">
+        <span class="info-strip-icon">🕒</span>
+        <span><strong>Open 24 hours</strong> for urgent matters</span>
+      </div>
+      <div class="info-strip-item">
+        <span class="info-strip-icon">⚖️</span>
+        <span><strong>Full-service</strong> law firm</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-visual"></div>
+        <div class="about-text">
+          <div class="section-label">About The Firm</div>
+          <h2 class="section-title">A firm built on <em>integrity, experience & results</em>.</h2>
+          <p class="lead">
+            We provide a full pyramid of legal advisory services — from courtroom litigation to commercial and property advice.
+          </p>
+          <p>
+            Mokhetle Attorneys Inc is a well-established Mahikeng law firm with experience across litigation, commercial matters, labour law, personal injury claims, property disputes, and more. We've represented individuals, businesses, and public bodies — including appointment by the North West Gambling Board in a procurement matter.
+          </p>
+          <p>
+            Our approach is simple: warm, accessible legal service backed by deep expertise. Whether you're facing a dispute, drafting a will, or need commercial advice — we're here to guide you clearly, and represent you firmly.
+          </p>
+          <div class="about-points">
+            <div class="about-point">
+              <div class="about-point-icon">1</div>
+              <div class="about-point-text">
+                <strong>Full-Service Firm</strong>
+                <span>Litigation, advisory, commercial & personal law under one roof.</span>
+              </div>
+            </div>
+            <div class="about-point">
+              <div class="about-point-icon">2</div>
+              <div class="about-point-text">
+                <strong>Proven Track Record</strong>
+                <span>Trusted by private clients and public bodies alike.</span>
+              </div>
+            </div>
+            <div class="about-point">
+              <div class="about-point-icon">3</div>
+              <div class="about-point-text">
+                <strong>Warm & Accessible</strong>
+                <span>Friendly staff, clear advice, and responsive communication.</span>
+              </div>
+            </div>
+            <div class="about-point">
+              <div class="about-point-icon">4</div>
+              <div class="about-point-text">
+                <strong>Always Available</strong>
+                <span>Open 24 hours for urgent matters and emergencies.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRACTICE AREAS ===== -->
+  <section id="practice">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-label">Practice Areas</div>
+        <h2 class="section-title">Expertise across <em>every area of law</em>.</h2>
+        <p class="section-intro">
+          Our practice spans a broad spectrum of legal disciplines. Whatever your matter, we have the expertise to advise and represent you.
+        </p>
+      </div>
+
+      <div class="practice-grid">
+        <div class="practice-card">
+          <span class="practice-num">01 / Litigation</span>
+          <h3>Civil & Commercial Litigation</h3>
+          <p>Representation in civil disputes and commercial litigation before all South African courts. From small claims to complex multi-party matters.</p>
+          <div class="practice-tags">
+            <span class="practice-tag">Civil Litigation</span>
+            <span class="practice-tag">Corporate Litigation</span>
+            <span class="practice-tag">Commercial Litigation</span>
+            <span class="practice-tag">Court Matters</span>
+          </div>
+        </div>
+
+        <div class="practice-card">
+          <span class="practice-num">02 / Criminal</span>
+          <h3>Criminal Defence</h3>
+          <p>Fierce and experienced defence in criminal proceedings. We're available 24 hours for urgent bail applications and police station attendance.</p>
+          <div class="practice-tags">
+            <span class="practice-tag">Criminal Defence</span>
+            <span class="practice-tag">Bail Applications</span>
+            <span class="practice-tag">Urgent Matters</span>
+          </div>
+        </div>
+
+        <div class="practice-card">
+          <span class="practice-num">03 / Property</span>
+          <h3>Property & Conveyancing</h3>
+          <p>Advice and representation on all property matters — from lease agreements to boundary disputes, evictions, and damage claims.</p>
+          <div class="practice-tags">
+            <span class="practice-tag">Landlord & Tenant</span>
+            <span class="practice-tag">Lease Agreements</span>
+            <span class="practice-tag">Property Disputes</span>
+            <span class="practice-tag">Property Damage</span>
+          </div>
+        </div>
+
+        <div class="practice-card">
+          <span class="practice-num">04 / Estates</span>
+          <h3>Trusts, Estates & Wills</h3>
+          <p>Guiding families through life's most important legal milestones — from drafting a will to administering a deceased estate.</p>
+          <div class="practice-tags">
+            <span class="practice-tag">Will Writing</span>
+            <span class="practice-tag">Trusts & Estates</span>
+            <span class="practice-tag">Probate Litigation</span>
+            <span class="practice-tag">Power of Attorney</span>
+          </div>
+        </div>
+
+        <div class="practice-card">
+          <span class="practice-num">05 / Personal Injury</span>
+          <h3>Personal Injury & Claims</h3>
+          <p>Pursuing the compensation you're entitled to — from motor vehicle accidents to disability benefits and insurance disputes.</p>
+          <div class="practice-tags">
+            <span class="practice-tag">MVA Claims</span>
+            <span class="practice-tag">Personal Injury</span>
+            <span class="practice-tag">Disability Benefits</span>
+            <span class="practice-tag">Insurance Litigation</span>
+            <span class="practice-tag">Lemon Law</span>
+          </div>
+        </div>
+
+        <div class="practice-card">
+          <span class="practice-num">06 / Commercial</span>
+          <h3>Commercial & Corporate</h3>
+          <p>Legal support for businesses — from contracts and due diligence to insolvency, forensic auditing, and commercial advisory.</p>
+          <div class="practice-tags">
+            <span class="practice-tag">Due Diligence</span>
+            <span class="practice-tag">Forensic Auditing</span>
+            <span class="practice-tag">Insolvency</span>
+            <span class="practice-tag">Small Business</span>
+          </div>
+        </div>
+
+        <div class="practice-card">
+          <span class="practice-num">07 / Labour</span>
+          <h3>Labour Law</h3>
+          <p>Representation for employers and employees in labour disputes, disciplinary hearings, CCMA matters, and workplace advisory.</p>
+          <div class="practice-tags">
+            <span class="practice-tag">Labour Law</span>
+            <span class="practice-tag">CCMA Matters</span>
+            <span class="practice-tag">Employment Advisory</span>
+          </div>
+        </div>
+
+        <div class="practice-card">
+          <span class="practice-num">08 / Rights & Advocacy</span>
+          <h3>Civil Rights & Consumer Advocacy</h3>
+          <p>Standing up for individuals against institutions — civil rights, consumer protection, and government litigation.</p>
+          <div class="practice-tags">
+            <span class="practice-tag">Civil Rights</span>
+            <span class="practice-tag">Consumer Advocacy</span>
+            <span class="practice-tag">Government Litigation</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional services -->
+      <div class="additional-services">
+        <h3>Additional Legal Services</h3>
+        <p>
+          Our firm also handles specialised matters across a wide range of disciplines. If your matter isn't listed above, contact us — we're likely able to assist or refer you appropriately.
+        </p>
+        <div class="additional-list">
+          <span>Debt Settlement</span>
+          <span>Entertainment Law</span>
+          <span>Intellectual Property</span>
+          <span>International Law</span>
+          <span>Legal Consulting</span>
+          <span>Legal Malpractice</span>
+          <span>Maritime Litigation</span>
+          <span>Nonprofit Litigation</span>
+          <span>Water Litigation</span>
+          <span>General Commercial</span>
+          <span>Legal Advisory</span>
+          <span>Nonprofit Litigation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== REVIEWS ===== -->
+  <section id="reviews">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-label">Client Reviews</div>
+        <h2 class="section-title">What clients <em>say about us</em>.</h2>
+      </div>
+
+      <div class="reviews-hero">
+        <div class="reviews-score">
+          <div class="reviews-score-num">4.4</div>
+          <span class="reviews-score-stars">★★★★☆</span>
+          <span class="reviews-score-label">Google Rating<br>9 Reviews</span>
+        </div>
+
+        <div class="reviews-summary">
+          <span class="quote-mark">"</span>
+          <p>
+            Warm and friendly staff — a firm that treats every client with respect, care, and clear legal guidance.
+          </p>
+          <div class="reviews-summary-author">— Google Review</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VISIT ===== -->
+  <section id="visit">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-label">Contact & Location</div>
+        <h2 class="section-title">Come in for a <em>consultation</em>.</h2>
+        <p class="section-intro">
+          Whether it's an urgent criminal matter or a long-term commercial advisory — we're here to help. Call us or visit our offices in Golf View.
+        </p>
+      </div>
+
+      <div class="visit-grid">
+        <div>
+          <div class="visit-block">
+            <h4><span>📍</span> Office Address</h4>
+            <p>18 Havenga St, Golf View<br>Mahikeng, 2745</p>
+          </div>
+
+          <div class="visit-block">
+            <h4><span>📞</span> Phone</h4>
+            <p><a href="tel:0183812910">018 381 2910</a></p>
+            <span class="small">Open 24 hours for urgent matters — criminal defence, bail applications, and emergencies.</span>
+          </div>
+
+          <div class="visit-block">
+            <h4><span>🕒</span> Office Hours</h4>
+            <p>Open 24 Hours</p>
+            <span class="small">Please call ahead to schedule a consultation with one of our attorneys.</span>
+          </div>
+
+          <div class="visit-actions">
+            <a href="tel:0183812910" class="btn btn-dark">📞 Call Now</a>
+            <a href="https://www.google.com/maps?q=Mokhetle+Attorneys+Inc,+18+Havenga+St,+Golf+View,+Mahikeng,+2745" class="btn btn-outline-navy" target="_blank">🗺️ Get Directions</a>
+          </div>
+        </div>
+
+        <div class="map-embed">
+          <iframe
+            src="https://www.google.com/maps?q=Mokhetle+Attorneys+Inc,+18+Havenga+St,+Golf+View,+Mahikeng,+2745&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA FINAL ===== -->
+  <section class="cta-final">
+    <div class="cta-final-inner">
+      <div class="section-label">Free Initial Consultation</div>
+      <h2>
+        Facing a legal matter?<br>
+        Let's talk it through. <em>Clearly.</em>
+      </h2>
+      <p>
+        Call us today to book a consultation. We'll listen carefully, explain your options honestly, and represent you firmly.
+      </p>
+      <div class="cta-final-actions">
+        <a href="tel:0183812910" class="btn btn-primary">📞 018 381 2910</a>
+        <a href="https://www.google.com/maps?q=Mokhetle+Attorneys+Inc,+18+Havenga+St,+Golf+View,+Mahikeng,+2745" class="btn btn-outline-light" target="_blank">🗺️ Visit Our Offices</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo-text">
+          <strong style="color: var(--white);">Mokhetle Attorneys Inc</strong>
+          <small style="display: block; margin-top: 4px;">Incorporated • Mahikeng</small>
+        </div>
+        <p>
+          A full-service South African law firm based in Mahikeng, offering expert litigation, commercial, property, and personal legal services — with warmth, integrity, and results.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Practice Areas</h5>
+        <ul>
+          <li><a href="#practice">Civil & Commercial Litigation</a></li>
+          <li><a href="#practice">Criminal Defence</a></li>
+          <li><a href="#practice">Property & Conveyancing</a></li>
+          <li><a href="#practice">Trusts, Estates & Wills</a></li>
+          <li><a href="#practice">Personal Injury & Claims</a></li>
+          <li><a href="#practice">Labour Law</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="tel:0183812910">018 381 2910</a></li>
+          <li><a href="https://www.google.com/maps?q=Mokhetle+Attorneys+Inc,+18+Havenga+St,+Golf+View,+Mahikeng,+2745" target="_blank">18 Havenga St, Golf View, Mahikeng, 2745</a></li>
+          <li><a href="#visit">Open 24 Hours</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Mokhetle Attorneys Inc. All rights reserved.<br>
+      This website does not constitute legal advice. Please consult an attorney for advice on your specific matter.
+    </div>
+  </footer>
+
+  <a href="tel:0183812910" class="whatsapp-float" aria-label="Call">
+    ⚖️
+  </a>
+
+</body>
+</html>
